@@ -3,47 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
     <title>ChatRoom</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
     <link rel="icon" href="img/icons8-chat-24.png">
-    <meta name="theme-color" content="#7952b3">
-
-    <style>
-        *{
-            overflow: hidden;
-        }
-    </style>
-
     <link href="product.css" rel="stylesheet">
 </head>
 <body>
-
 <header class="site-header sticky-top py-1 d-inline-flex w-100 p-4 py-2">
-    <a class="py-2" href="#">
-        <img src="img/icons8-chat-24.png" alt="image" />
-    </a>
+    <a class="py-2" href="#"><img src="img/icons8-chat-24.png" alt="image" /></a>
     <nav class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="#">My ChatRoom</a>
         <a class="py-2 d-none d-md-inline-block" href="#">About</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
     </nav>
 </header>
-
 <main>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
             <h1 class="display-4 fw-normal">ChatRoom</h1>
             <p class="lead fw-normal">Chat with your friends without worrying about the chat logs. Now you can freely chat with your friends.</p>
             <form action="claim.php" method="post">
-                <label for="room">ChatRoom.com/
-                    <input type="text" name="room" id="room">
-                </label>
-                <br/>
+                <label for="room">ChatRoom.com/<input type="text" name="room" id="room"></label><br/>
                 <button class="btn btn-outline-secondary mt-4">Claim Room</button>
             </form>
         </div>
@@ -53,12 +33,8 @@
 </main>
 
 <footer class="container py-5">
-    <div class="row">
-        <h5 align="center">Made With ❤ By Jayant Goel.</h5>
-    </div>
+    <div class="row"><h5 align="center">Made With ❤ By Jayant Goel.</h5></div>
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
 </body>
 </html>
