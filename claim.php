@@ -17,7 +17,6 @@
         echo "window.location='http://localhost:63342/ChatRoom/';";
         echo "</script>";
     }else{
-//        include 'db_connect.php';
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -56,6 +55,5 @@
         }else{
             echo ("ERROR ".mysqli_error($conn));
         }
-
     }
 
