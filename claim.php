@@ -46,7 +46,7 @@
 
                     echo "<script language='JavaScript'>";
                     echo "alert('$message');";
-                    echo "window.location='http://localhost:63342/ChatRoom/rooms.php?roomname=' . $room. ';";
+                    echo 'window.location="http://localhost:63342/ChatRoom/rooms.php?roomname=' . $room. '";';
                     echo "</script>";
                 }else{
                     echo ("ERROR".mysqli_error($conn));
