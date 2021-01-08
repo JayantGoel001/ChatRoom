@@ -35,6 +35,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="product.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="icon" href="img/icons8-chat-24.png">
     <style>
         body {
@@ -81,14 +82,30 @@
             float: left;
             color: #999;
         }
+
+        .anyClass{
+            height: 350px;
+            overflow-y: scroll;
+        }
     </style>
-    <title>ChatRoom</title>
+    <title>ChatRoom - <?php echo $room_name; ?></title>
 </head>
+
 <body>
 
-<h2>Chat Messages</h2>
+<header class="site-header sticky-top py-1 d-inline-flex w-100 p-4 py-2">
+    <a class="py-2 px-1" href="#"><img src="img/icons8-chat-24.png" alt="image" /></a>
+    <nav class="px-3 w-100 d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="/">My ChatRoom</a>
+        <a class="py-2 d-none d-md-inline-block" href="/">About</a>
+        <a class="py-2 d-none d-md-inline-block" href="/">Contact</a>
+    </nav>
+</header>
+
+<h2>Chat Messages - <?php echo $room_name; ?></h2>
 
 <div class="container">
+    <div c
     <p>Hello. How are you today?</p>
     <span class="time-right">11:00</span>
 </div>
@@ -98,17 +115,15 @@
     <span class="time-left">11:01</span>
 </div>
 
-<div class="container">
-    <p>Sweet! So, what do you wanna do today?</p>
-    <span class="time-right">11:02</span>
-</div>
-
-<div class="container darker">
-    <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-    <span class="time-left">11:05</span>
-</div>
+<label for="usermsg">
+    <input type="text" id="usermsg" class="form-control" size="100%" name="usermsg" placeholder="Add Message">
+</label>
+<br>
+<button class="btn btn-dark mt-3" name="submitsmg">SEND</button>
 
 <div class="product-device shadow-sm d-none d-md-block"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 </body>
 </html>
