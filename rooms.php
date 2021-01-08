@@ -95,7 +95,7 @@
         }
 
         .anyClass{
-            height: 425px;
+            height: 420px;
             overflow-y: scroll;
         }
     </style>
@@ -116,16 +116,7 @@
 
 
 <div class="container mt-2 ">
-    <div class="anyClass">
-        <div class="message brighter">
-            <p>Hello. How are you today?</p>
-            <span class="time-right">11:00</span>
-        </div>
-        <div class="message darker">
-            <p>Hey! I'm fine. Thanks for asking!</p>
-            <span class="time-left">11:01</span>
-        </div>
-    </div>
+    <div class="anyClass"></div>
 </div>
 
 <div class="product-device shadow-sm d-none d-md-block"></div>
@@ -142,6 +133,16 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script type="text/javascript">
+
+    setInterval(runFunction,1000);
+    function runFunction() {
+        $.post("htcont.php",{
+            room:'<?php echo $room_name ?>',
+        },function (data, status) {
+            document.getElementsByClassName('anyClass')[0].innerHTML = data;
+        })
+    }
+
 
     const input = document.getElementById("usermsg");
 
