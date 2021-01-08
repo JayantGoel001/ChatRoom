@@ -53,24 +53,31 @@
             padding: 10px;
             margin: 10px 0;
         }
+        .message{
+            border: 2px solid #dedede;
+            border-radius: 5px;
+            padding-left: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .brighter{
+            color: black;
+            border-color: #FFF;
+            background-color: #FFF;
+            text-align: end;
+        }
 
         .darker {
-            border-color: #ccc;
-            background-color: #ddd;
+            color: white;
+            border-color: #000;
+            background-color: #000;
         }
 
         .container::after {
             content: "";
             clear: both;
             display: table;
-        }
-
-        .container img {
-            float: left;
-            max-width: 60px;
-            width: 100%;
-            margin-right: 20px;
-            border-radius: 50%;
         }
 
         .time-right {
@@ -84,7 +91,7 @@
         }
 
         .anyClass{
-            height: 350px;
+            height: 400px;
             overflow-y: scroll;
         }
     </style>
@@ -93,8 +100,8 @@
 
 <body>
 
-<header class="site-header sticky-top py-1 d-inline-flex w-100 p-4 py-2">
-    <a class="py-2 px-1" href="#"><img src="img/icons8-chat-24.png" alt="image" /></a>
+<header class="site-header sticky-top py-1 d-inline-flex w-100 p-4 py-2 mb-2">
+    <a class="py-2 px-1" href="/"><img src="img/icons8-chat-24.png" alt="image" /></a>
     <nav class="px-3 w-100 d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="/">My ChatRoom</a>
         <a class="py-2 d-none d-md-inline-block" href="/">About</a>
@@ -102,18 +109,22 @@
     </nav>
 </header>
 
-<h2>Chat Messages - <?php echo $room_name; ?></h2>
+<h2 class="mt-2 mb-4" align="center">Chat Messages - <?php echo $room_name; ?></h2>
 
-<div class="container">
-    <div c
-    <p>Hello. How are you today?</p>
-    <span class="time-right">11:00</span>
+
+<div class="container mt-2">
+    <div class="anyClass">
+        <div class="message brighter">
+            <p>Hello. How are you today?</p>
+            <span class="time-right">11:00</span>
+        </div>
+        <div class="message darker">
+            <p>Hey! I'm fine. Thanks for asking!</p>
+            <span class="time-left">11:01</span>
+        </div>
+    </div>
 </div>
 
-<div class="container darker">
-    <p>Hey! I'm fine. Thanks for asking!</p>
-    <span class="time-left">11:01</span>
-</div>
 
 <label for="usermsg">
     <input type="text" id="usermsg" class="form-control" size="100%" name="usermsg" placeholder="Add Message">
