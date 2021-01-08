@@ -108,7 +108,7 @@
     <nav class="px-3 w-100 d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="/">My ChatRoom</a>
         <a class="py-2 d-none d-md-inline-block" href="/">About</a>
-        <a class="py-2 d-none d-md-inline-block" href="/">Contact</a>
+        <a class="py-2 d-none d-md-inline-block" >Share Link</a>
     </nav>
 </header>
 
@@ -133,12 +133,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-
     setInterval(runFunction,1000);
     function runFunction() {
         $.post("htcont.php",{
             room:'<?php echo $room_name ?>',
-        },function (data, status) {
+        },function (data, _) {
             document.getElementsByClassName('anyClass')[0].innerHTML = data;
         })
     }
