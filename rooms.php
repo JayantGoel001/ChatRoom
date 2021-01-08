@@ -28,6 +28,8 @@
     }else{
         echo "ERROR".mysqli_error($conn);
     }
+    mysqli_close($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +54,8 @@
             border-radius: 5px;
             padding: 10px;
             margin: 10px 0;
+            position: relative !important;
+            z-index: 1;
         }
         .message{
             border: 2px solid #dedede;
@@ -91,7 +95,7 @@
         }
 
         .anyClass{
-            height: 400px;
+            height: 425px;
             overflow-y: scroll;
         }
     </style>
@@ -101,7 +105,6 @@
 <body>
 
 <header class="site-header sticky-top py-1 d-inline-flex w-100 p-4 py-2 mb-2">
-    <a class="py-2 px-1" href="/"><img src="img/icons8-chat-24.png" alt="image" /></a>
     <nav class="px-3 w-100 d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="/">My ChatRoom</a>
         <a class="py-2 d-none d-md-inline-block" href="/">About</a>
@@ -112,7 +115,7 @@
 <h2 class="mt-2 mb-4" align="center">Chat Messages - <?php echo $room_name; ?></h2>
 
 
-<div class="container mt-2">
+<div class="container mt-2 ">
     <div class="anyClass">
         <div class="message brighter">
             <p>Hello. How are you today?</p>
@@ -128,10 +131,10 @@
 <div class="product-device shadow-sm d-none d-md-block"></div>
 
 <label for="usermsg">
-    <input type="text" id="usermsg" class="form-control" size="100%" name="usermsg" placeholder="Add Message">
+    <input type="text" id="usermsg" class="form-control position-relative" size="100%" name="usermsg" placeholder="Add Message">
 </label>
 <br>
-<button class="btn btn-dark mt-3" id="submitsmg" name="submitsmg">SEND</button>
+<button class="btn btn-dark mt-3 position-relative " id="submitsmg" name="submitsmg">SEND</button>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -140,15 +143,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
-    let clientmsg = $("#usermsg").val();
-
     $("#submitsmg").click(function () {
+        let clientmsg = $("#usermsg").val();
+
         $.post("postmsg.php",{
             text:clientmsg,
             room:'<?php echo $room_name; ?>',
             ip:'<?php echo $_SERVER['REMOTE_ADDR']; ?>'
         },
-        function (data,status) {
+        function (data,_) {
             document.getElementsByClassName('anyClass')[0].innerHeight=data;
             return false;
         });
